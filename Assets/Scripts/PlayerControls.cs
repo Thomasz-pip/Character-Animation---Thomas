@@ -76,9 +76,18 @@ public class PlayerController : MonoBehaviour
     // Function to handle animations and sound effects
     void Effects()
     {
-        // Check if the player is running
-        if (runInput != 0)
+        // Check if runInput value is NOT 0 AND jumpInput value IS 0
+        if (runInput != 0 && jumpInput == 0)
         {
+            // Check if jumpInput IS 1
+if (jumpInput == 1)
+{
+    // If true then set Boolean "Jump" parameter to true
+    anim.SetBool("Jump", true);
+} else {
+    // If false then set Boolean "Jump" parameter to false
+    anim.SetBool("Jump", false);
+}
             // Trigger the "Run Forward" animation
             anim.SetBool("Run Forward", true);
 
